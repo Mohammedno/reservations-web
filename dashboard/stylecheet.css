@@ -1,0 +1,45 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.one{
+	background-image: url(item17.JPG);
+	background-size: cover;
+
+
+	
+	
+	background-repeat: no-repeat;
+	
+
+}
+.menu-bar{
+	background-color: rgb(0,100,0);
+	text-align: center;
+
+}
+.menu-bar ul{
+	display: inline-flex; 
+	list-style: none;
+	color: #FFF;
+}
+.menu-bar ul li{
+	width: 120px;
+	margin: 15px;
+	padding: 15;
+}
+.menu-bar ul li a{
+text-decoration-line: none;
+	color: #FFF;
+}
+.active,.menu-bar ul li:hover{
+	background: #2babd0;
+	border-radius: 3px;
+
+} 
+.center-div{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+}
