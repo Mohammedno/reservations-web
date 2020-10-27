@@ -65,6 +65,18 @@ class DataBase
             return true;
         } else return false;
     }
+    function reserve($date, $type, $user_id)
+    {
+        $date = $this->prepareData($date);
+        $type = $this->prepareData($type);
+        $user_id = $this->prepareData($user_id);
+       
+        $this->sql =
+            "INSERT INTO reservations (date, type, user_id) VALUES ('" . $date . "','" . $type . "','" . $user_id . "')";
+        if (mysqli_query($this->connect, $this->sql)) {
+            return true;
+        } else return false;
+    }
 
 
      function reservationsFromTo($from, $to)
