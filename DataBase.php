@@ -45,7 +45,7 @@ class DataBase
             $dbusername = $row['username'];
             $dbpassword = $row['password'];
             if ($dbusername == $username && password_verify($password, $dbpassword)) {
-                $login = true;
+                $login = $row;
             } else $login = false;
         } else $login = false;
 
@@ -63,7 +63,11 @@ class DataBase
             "INSERT INTO " . $table . " (fullname, username, password, email) VALUES ('" . $fullname . "','" . $username . "','" . $password . "','" . $email . "')";
         if (mysqli_query($this->connect, $this->sql)) {
             return true;
-        } else return false;
+        } else{
+            var_dump(mysqli_error($this->connect));
+            die();
+            return false;
+        } 
     }
     function reserve($date, $type, $user_id)
     {
